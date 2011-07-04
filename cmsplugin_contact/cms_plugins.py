@@ -10,6 +10,7 @@ from cms.plugins.text.settings import USE_TINYMCE
 from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
 from models import Contact
 from forms import AkismetContactForm, RecaptchaContactForm, HoneyPotContactForm
+from django.core.mail import EmailMessage
 from admin import ContactAdminForm
 
 class ContactPlugin(CMSPluginBase):
@@ -79,13 +80,8 @@ class ContactPlugin(CMSPluginBase):
 
 
     def send(self, form, site_email):
-        subject = form.cleaned_data['subject']
-        if not subject:
-            subject = _('No subject')
         email_message = EmailMessage(
-            render_to_string("cmsplugin_contact/subject.txt", {
-                'subject': subject,
-            }),
+            'vcard',
             render_to_string("cmsplugin_contact/email.txt", {
                 'data': form.cleaned_data,
             }),
@@ -94,6 +90,10 @@ class ContactPlugin(CMSPluginBase):
             headers = {
                 'Reply-To': form.cleaned_data['email']
             },)
+
+        vcard_data = render_to_string("cmsplugin_contact/vcard.txt", form.cleaned_data),
+
+        email_message.attach('vcard.vcf', vcard_data[0], 'text/x-vcard')            
         email_message.send(fail_silently=True)
     
     def render(self, context, instance, placeholder):

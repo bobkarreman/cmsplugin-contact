@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:2.1
+N:{{ lastname }};{{ initials }};;{{ abbreviation }}
+FN:{{ initials }} {{ lastname }}
+ORG:{{ company }}
+TITLE:{{ function }}
+TEL;WORK;VOICE:{{ phone }}
+TEL;CELL;VOICE:{{ mobile_phone }}
+ADR;WORK:;;{{ address }};{{ city }};;{{ zipcode }}
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:{{ address }}=0D=0A{{ city }} {{ zipcode }}
+URL;HOME:{{ website }}
+EMAIL;PREF;INTERNET:{{ email }}
+REV:20110701T204658Z
+END:VCARD
