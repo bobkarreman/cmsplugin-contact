@@ -1,6 +1,7 @@
 from django import forms
 #import settings
 from stopspam.forms import HoneyPotForm, RecaptchaForm, AkismetForm
+from models import Contact
   
 class HoneyPotContactForm(HoneyPotForm):
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
@@ -54,6 +55,7 @@ class AkismetContactForm(AkismetForm):
     akismet_api_key = None
     
 
+        
 class RecaptchaContactForm(RecaptchaForm):
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
     initials = forms.CharField()
@@ -75,3 +77,18 @@ class RecaptchaContactForm(RecaptchaForm):
     recaptcha_public_key = None
     recaptcha_private_key = None
     recaptcha_theme = None
+    def __init__(self, *args, **kwargs):
+        instance = kwargs.pop('instance')
+        super(RecaptchaContactForm, self).__init__(*args, **kwargs)
+        self.fields["initials"].required = instance.required_initials
+        self.fields["lastname"].required = instance.required_lastname
+        self.fields["abbreviation"].required = instance.required_abbreviation
+        self.fields["company"].required = instance.required_company
+        self.fields["function"].required = instance.required_function
+        self.fields["address"].required = instance.required_address
+        self.fields["zipcode"].required = instance.required_zipcode
+        self.fields["city"].required = instance.required_city
+        self.fields["phone"].required = instance.required_phone
+        self.fields["mobile_phone"].required = instance.required_mobile_phone
+        self.fields["email"].required = instance.required_email
+        self.fields["website"].required = instance.required_website

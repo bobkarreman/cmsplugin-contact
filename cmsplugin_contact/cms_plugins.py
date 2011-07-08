@@ -23,6 +23,11 @@ class ContactPlugin(CMSPluginBase):
         (None, {
             'fields': ('site_email', 'email_label', 'subject_label', 'content_label', 'thanks', 'submit'),
         }),
+
+        (_('Required Fields'), {
+            'fields': ('required_initials', 'required_lastname', 'required_abbreviation', 'required_company', 'required_function', 'required_address', 'required_zipcode', 'required_city', 'required_phone', 'required_mobile_phone', 'required_email', 'required_website')
+        }),
+        
         (_('Spam Protection'), {
             'fields': ('spam_protection_method', 'akismet_api_key', 'recaptcha_public_key', 'recaptcha_private_key', 'recaptcha_theme')
         })
@@ -64,12 +69,14 @@ class ContactPlugin(CMSPluginBase):
             AkismetContactForm.aksimet_api_key = instance.akismet_api_key
             FormClass = AkismetContactForm
         elif instance.get_spam_protection_method_display() == 'ReCAPTCHA':
+            RecaptchaContactForm.instance = instance
             RecaptchaContactForm.recaptcha_public_key = getattr(settings, "RECAPTCHA_PUBLIC_KEY", \
                                                         instance.recaptcha_public_key)
             RecaptchaContactForm.recaptcha_private_key = getattr(settings, "RECAPTCHA_PRIVATE_KEY", \
                                                          instance.recaptcha_private_key)
             RecaptchaContactForm.recaptcha_theme = instance.recaptcha_theme
-            FormClass = RecaptchaContactForm
+            # FormClass = RecaptchaContactForm
+            return RecaptchaContactForm(request, instance=instance)
         else:
             FormClass = HoneyPotContactForm
             

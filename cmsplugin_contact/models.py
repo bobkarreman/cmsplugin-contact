@@ -32,5 +32,20 @@ class Contact(CMSPlugin):
     recaptcha_private_key = models.CharField(max_length=255, blank=True)
     recaptcha_theme = models.CharField(max_length=20, choices=THEME_CHOICES, default='clean', verbose_name=_('ReCAPTCHA theme'))
     
+
+    required_initials = models.BooleanField()
+    required_lastname = models.BooleanField()
+    required_abbreviation = models.BooleanField()
+    required_company = models.BooleanField()
+    required_function = models.BooleanField()
+    required_address = models.BooleanField()
+    required_zipcode = models.BooleanField()
+    required_city = models.BooleanField()
+    required_phone = models.BooleanField()
+    required_mobile_phone = models.BooleanField()
+    required_email = models.BooleanField()
+    required_website = models.BooleanField()
+
+    
     def __unicode__(self):
         return self.site_email
