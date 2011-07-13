@@ -25,7 +25,7 @@ class ContactPlugin(CMSPluginBase):
         }),
 
         (_('Required Fields'), {
-            'fields': ('required_initials', 'required_lastname', 'required_abbreviation', 'required_company', 'required_function', 'required_address', 'required_zipcode', 'required_city', 'required_phone', 'required_mobile_phone', 'required_email', 'required_website')
+            'fields': ('required_firstname', 'required_lastname', 'required_abbreviation', 'required_company', 'required_function', 'required_address', 'required_zipcode', 'required_city', 'required_phone', 'required_mobile_phone', 'required_email', 'required_website')
         }),
         
         (_('Spam Protection'), {
