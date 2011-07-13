@@ -76,7 +76,11 @@ class ContactPlugin(CMSPluginBase):
                                                          instance.recaptcha_private_key)
             RecaptchaContactForm.recaptcha_theme = instance.recaptcha_theme
             # FormClass = RecaptchaContactForm
-            return RecaptchaContactForm(request, instance=instance)
+            if request.method == "POST":
+                return RecaptchaContactForm(request, instance=instance, data=request.POST)
+            else:
+                return RecaptchaContactForm(request, instance=instance)
+                
         else:
             FormClass = HoneyPotContactForm
             
