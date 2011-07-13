@@ -1,7 +1,7 @@
 BEGIN:VCARD
 VERSION:2.1
-N:{{ lastname }};{{ initials }};;{{ abbreviation }}
-FN:{{ initials }} {{ lastname }}
+N:{{ lastname }};{{ firstname }};;{{ abbreviation }}
+FN:{{ firstname }} {{ lastname }}
 ORG:{{ company }}
 TITLE:{{ function }}
 TEL;WORK;VOICE:{{ phone }}

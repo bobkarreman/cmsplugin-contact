@@ -5,7 +5,7 @@ from models import Contact
   
 class HoneyPotContactForm(HoneyPotForm):
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
-    initials = forms.CharField()
+    firstname = forms.CharField()
     lastname = forms.CharField()
     abbreviation = forms.ChoiceField(widget=forms.RadioSelect, choices=ABB_CHOICES)
     company = forms.CharField(required=False)
@@ -32,7 +32,7 @@ class AkismetContactForm(AkismetForm):
         # 'comment_content': 'content'
     }
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
-    initials = forms.CharField()
+    firstname = forms.CharField()
     lastname = forms.CharField()
     abbreviation = forms.ChoiceField(widget=forms.RadioSelect, choices=ABB_CHOICES)
     company = forms.CharField(required=False)
@@ -58,7 +58,7 @@ class AkismetContactForm(AkismetForm):
         
 class RecaptchaContactForm(RecaptchaForm):
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
-    initials = forms.CharField()
+    firstname = forms.CharField()
     lastname = forms.CharField()
     abbreviation = forms.ChoiceField(widget=forms.RadioSelect, choices=ABB_CHOICES)
     company = forms.CharField(required=False)
@@ -80,7 +80,7 @@ class RecaptchaContactForm(RecaptchaForm):
     def __init__(self, *args, **kwargs):
         instance = kwargs.pop('instance')
         super(RecaptchaContactForm, self).__init__(*args, **kwargs)
-        self.fields["initials"].required = instance.required_initials
+        self.fields["firstname"].required = instance.required_firstname
         self.fields["lastname"].required = instance.required_lastname
         self.fields["abbreviation"].required = instance.required_abbreviation
         self.fields["company"].required = instance.required_company

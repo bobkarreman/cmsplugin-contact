@@ -33,7 +33,7 @@ class Contact(CMSPlugin):
     recaptcha_theme = models.CharField(max_length=20, choices=THEME_CHOICES, default='clean', verbose_name=_('ReCAPTCHA theme'))
     
 
-    required_initials = models.BooleanField()
+    required_firstname = models.BooleanField()
     required_lastname = models.BooleanField()
     required_abbreviation = models.BooleanField()
     required_company = models.BooleanField()

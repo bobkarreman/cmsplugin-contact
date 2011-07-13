@@ -4,11 +4,11 @@
 	<form action='' method="POST">
 
 
-        <p {% if form.initials.errors %}class="error"{% endif %}>
+        <p {% if form.firstname.errors %}class="error"{% endif %}>
 			<label>Voorletters</label>
-				{{ form.initials }}
-			{% if form.initials.errors %}
-				{% for error in form.initials.errors %}
+				{{ form.firstname }}
+			{% if form.firstname.errors %}
+				{% for error in form.firstname.errors %}
 					<span class="error_msg">{{ error }}</span>
 				{% endfor %}
 			{% endif %}
