@@ -6,7 +6,7 @@ from models import Contact
 from stopspam.forms.widgets import RecaptchaResponse
   
 class HoneyPotContactForm(HoneyPotForm):
-    ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
+    ABB_CHOICES = (('Mr', _('Mr'),), ('Ms', _('Ms'),))
     firstname = forms.CharField()
     lastname = forms.CharField()
     abbreviation = forms.ChoiceField(widget=forms.RadioSelect, choices=ABB_CHOICES)
