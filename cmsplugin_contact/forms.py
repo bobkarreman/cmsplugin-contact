@@ -1,8 +1,9 @@
 from django import forms
 #import settings
+from django.utils.translation import ugettext_lazy as _
 from stopspam.forms import HoneyPotForm, RecaptchaForm, AkismetForm
 from models import Contact
-from widgets import RecaptchaChallenge, RecaptchaResponse
+from stopspam.forms.widgets import RecaptchaResponse
   
 class HoneyPotContactForm(HoneyPotForm):
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
