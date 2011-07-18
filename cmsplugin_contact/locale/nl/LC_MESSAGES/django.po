@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-18 22:03+0200\n"
+"PO-Revision-Date: 2011-07-18 22:08\n"
+"Last-Translator: <bob@karreman.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.5.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:16
+msgid "Akismet API Key"
+msgstr ""
+
+#: admin.py:16
+msgid "Get a Wordpress Key from http://akismet.com/"
+msgstr ""
+
+#: admin.py:18
+msgid "ReCAPTCHA Public Key"
+msgstr ""
+
+#: admin.py:18 admin.py:19
+msgid "Get this from http://www.google.com/recaptcha"
+msgstr ""
+
+#: admin.py:19
+msgid "ReCAPTCHA Private Key"
+msgstr ""
+
+#: admin.py:36
+msgid "Akismet library is not installed. Use \"easy_install akismet\" or \"pip install akismet\"."
+msgstr ""
+
+#: admin.py:50
+msgid "The API Key is not valid."
+msgstr ""
+
+#: admin.py:58
+msgid "ReCAPTCHA library is not installed. Use \"easy_install recaptcha-client\" or \"pip install recaptcha-client\"."
+msgstr ""
+
+#: cms_plugins.py:18
+msgid "Contact Form"
+msgstr "Contact formulier"
+
+#: cms_plugins.py:27
+msgid "Required Fields"
+msgstr "Verplichte velden"
+
+#: cms_plugins.py:31
+msgid "Spam Protection"
+msgstr "Spam beveiliging"
+
+#: forms.py:84
+msgid "Please enter the two words on the image separated by a space:"
+msgstr "Voer de twee woorden van de afbeelding in gescheiden door een spatie:"
+
+#: forms.py:86
+msgid "You did not enter any of the words."
+msgstr "Heeft u de woorden ingevuld?"
+
+#: models.py:20
+msgid "Email recipient"
+msgstr "E-mail ontvanger"
+
+#: models.py:21
+msgid "Email sender label"
+msgstr "E-mail afzender label"
+
+#: models.py:21
+msgid "Your email address"
+msgstr "Uw e-mailadres"
+
+#: models.py:22
+msgid "Subject label"
+msgstr "Onderwerp label"
+
+#: models.py:22
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: models.py:23
+msgid "Message content label"
+msgstr "Inhoud van de boodschap label"
+
+#: models.py:23
+msgid "Message"
+msgstr "Bericht"
+
+#: models.py:24
+msgid "Thanks message"
+msgstr "Dank bericht"
+
+#: models.py:24
+msgid "Message displayed on successful submit"
+msgstr "Bericht weergegeven na succesvol indienen"
+
+#: models.py:24
+msgid "Thank you for your message."
+msgstr "Hartelijk dank voor uw bericht."
+
+#: models.py:25
+msgid "Submit button value"
+msgstr "Submit knop tekst"
+
+#: models.py:25
+msgid "Submit"
+msgstr "Verzenden"
+
+#: models.py:27
+msgid "Spam protection method"
+msgstr "Spam bescherming methode"
+
+#: models.py:33
+msgid "ReCAPTCHA theme"
+msgstr ""
+
+#: models.py:36
+msgid "Firstname required"
+msgstr "Voornaam verplicht?"
+
+#: models.py:37
+msgid "Lastname required"
+msgstr "Achternaam verplicht?"
+
+#: models.py:38
+msgid "Title required"
+msgstr "Aanhef verplicht?"
+
+#: models.py:39
+msgid "Company required"
+msgstr "Bedrijf verplicht?"
+
+#: models.py:40
+msgid "Function required"
+msgstr "Functie verplicht?"
+
+#: models.py:41
+msgid "Address required"
+msgstr "Adres verplicht?"
+
+#: models.py:42
+msgid "Zipcode required"
+msgstr "Postcode verplicht?"
+
+#: models.py:43
+msgid "City required"
+msgstr "Stad verplicht?"
+
+#: models.py:44
+msgid "Phone required"
+msgstr "Telefoon verplicht?"
+
+#: models.py:45
+msgid "Mobile required"
+msgstr "Mobiel verplicht?"
+
+#: models.py:46
+msgid "E-Mail required"
+msgstr "Email verplicht?"
+
+#: models.py:47
+msgid "Website required"
+msgstr "Website verplicht?"
+
+#: templates/cmsplugin_contact/contact.html:39
+#: templates/cmsplugin_contact/contact_form.html:127
+msgid "Incorrect please try again"
+msgstr ""
+
+#: templates/cmsplugin_contact/contact.html:42
+#: templates/cmsplugin_contact/contact_form.html:130
+msgid "Enter the words above:"
+msgstr ""
+
+#: templates/cmsplugin_contact/contact.html:43
+#: templates/cmsplugin_contact/contact_form.html:131
+msgid "Enter the numbers you hear:"
+msgstr ""
+
+#: templates/cmsplugin_contact/contact.html:48
+#: templates/cmsplugin_contact/contact_form.html:136
+msgid "Get another CAPTCHA"
+msgstr ""
+
+#: templates/cmsplugin_contact/contact.html:49
+#: templates/cmsplugin_contact/contact_form.html:137
+msgid "Get an audio CAPTCHA"
+msgstr ""
+
+#: templates/cmsplugin_contact/contact.html:50
+#: templates/cmsplugin_contact/contact_form.html:138
+msgid "Get an image CAPTCHA"
+msgstr ""
+
+#: templates/cmsplugin_contact/contact.html:52
+#: templates/cmsplugin_contact/contact_form.html:140
+msgid "Help"
+msgstr ""

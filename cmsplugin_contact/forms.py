@@ -2,6 +2,7 @@ from django import forms
 #import settings
 from stopspam.forms import HoneyPotForm, RecaptchaForm, AkismetForm
 from models import Contact
+from widgets import RecaptchaChallenge, RecaptchaResponse
   
 class HoneyPotContactForm(HoneyPotForm):
     ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
@@ -77,6 +78,14 @@ class RecaptchaContactForm(RecaptchaForm):
     recaptcha_public_key = None
     recaptcha_private_key = None
     recaptcha_theme = None
+
+    recaptcha_response_field = forms.CharField(
+                widget = RecaptchaResponse,
+                label = _('Please enter the two words on the image separated by a space:'),
+                error_messages = {
+                    'required': _('You did not enter any of the words.')
+            })
+
     def __init__(self, *args, **kwargs):
         instance = kwargs.pop('instance')
         super(RecaptchaContactForm, self).__init__(*args, **kwargs)

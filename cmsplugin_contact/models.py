@@ -33,18 +33,18 @@ class Contact(CMSPlugin):
     recaptcha_theme = models.CharField(max_length=20, choices=THEME_CHOICES, default='clean', verbose_name=_('ReCAPTCHA theme'))
     
 
-    required_firstname = models.BooleanField()
-    required_lastname = models.BooleanField()
-    required_abbreviation = models.BooleanField()
-    required_company = models.BooleanField()
-    required_function = models.BooleanField()
-    required_address = models.BooleanField()
-    required_zipcode = models.BooleanField()
-    required_city = models.BooleanField()
-    required_phone = models.BooleanField()
-    required_mobile_phone = models.BooleanField()
-    required_email = models.BooleanField()
-    required_website = models.BooleanField()
+    required_firstname = models.BooleanField(_('Firstname required'))
+    required_lastname = models.BooleanField(_('Lastname required'))
+    required_abbreviation = models.BooleanField(_('Title required'))
+    required_company = models.BooleanField(_('Company required'))
+    required_function = models.BooleanField(_('Function required'))
+    required_address = models.BooleanField(_('Address required'))
+    required_zipcode = models.BooleanField(_('Zipcode required'))
+    required_city = models.BooleanField(_('City required'))
+    required_phone = models.BooleanField(_('Phone required'))
+    required_mobile_phone = models.BooleanField(_('Mobile required'))
+    required_email = models.BooleanField(_('E-Mail required'))
+    required_website = models.BooleanField(_('Website required'))
 
     
     def __unicode__(self):
