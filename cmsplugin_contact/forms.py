@@ -33,7 +33,7 @@ class AkismetContactForm(AkismetForm):
         'comment_author_email': 'email',
         # 'comment_content': 'content'
     }
-    ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
+    ABB_CHOICES = (('Mr', _('Mr'),), ('Ms', _('Ms'),))
     firstname = forms.CharField()
     lastname = forms.CharField()
     abbreviation = forms.ChoiceField(widget=forms.RadioSelect, choices=ABB_CHOICES)
@@ -59,7 +59,7 @@ class AkismetContactForm(AkismetForm):
 
         
 class RecaptchaContactForm(RecaptchaForm):
-    ABB_CHOICES = (('Dhr', 'Dhr',), ('Mevr', 'Mevr',))
+    ABB_CHOICES = (('Mr', _('Mr'),), ('Ms', _('Ms'),))
     firstname = forms.CharField()
     lastname = forms.CharField()
     abbreviation = forms.ChoiceField(widget=forms.RadioSelect, choices=ABB_CHOICES)
